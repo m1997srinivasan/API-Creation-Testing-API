@@ -4,7 +4,12 @@ const express = require("express");
 //setting up Express js
 const app = express();
 
-const PORT = 7050;
+const PORT = 7030;
+
+app.use((req,res,next)=>{
+    console.log(req.path, req.method)
+    next()
+})
 
 const dashboardroutes = require("./routes/dashboardroutes");
 
